@@ -1,1 +1,0 @@
-"""EduGenie FastAPI backend package."""
