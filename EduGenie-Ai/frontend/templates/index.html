@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduGenie | AI Learning Assistant</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <main class="container">
+    <header class="hero">
+      <div class="brand-row"><div class="brand-mark">✦</div><div><strong>EduGenie</strong><div class="brand-caption">AI LEARNING ASSISTANT</div></div></div>
+      <h1>Learn better.<span>One step at a time.</span></h1>
+      <p>Your personal space for questions, practice and confident progress.</p>
+    </header>
+
+    <section class="card workspace-card">
+      <div class="section-kicker">01&nbsp;&nbsp; START A LEARNING SESSION</div>
+      <label for="task">Choose a task</label>
+      <select id="task">
+        <option value="qa">Ask a Question</option>
+        <option value="explain">Explain a Topic</option>
+        <option value="quiz">Generate Quiz</option>
+        <option value="summarize">Summarize Text</option>
+        <option value="learn">Recommend Learning Path</option>
+      </select>
+
+      <div id="extraFields"></div>
+
+      <label for="inputText" id="inputLabel">Your question</label>
+      <textarea id="inputText" rows="9" placeholder="Ask something..." aria-describedby="inputHelp"></textarea>
+      <p id="inputHelp" class="input-help">Your text stays in this session and is sent only to generate this response.</p>
+
+      <button id="submitBtn">Generate <b>→</b></button>
+    </section>
+
+    <section class="card result-card">
+      <div class="result-header">
+        <div><div class="section-kicker">02&nbsp;&nbsp; YOUR NEXT STEP</div><h2>Your learning space</h2></div>
+        <span id="status" class="status">Ready</span>
+      </div>
+      <div id="result" class="result empty" role="status" aria-live="polite">Your result will appear here.</div>
+    </section>
+
+    <footer>
+      EduGenie • FastAPI + Google Gemini
+    </footer>
+  </main>
+
+  <script src="{{ url_for('static', path='app.js') }}"></script>
+</body>
+</html>
